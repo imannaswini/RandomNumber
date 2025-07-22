@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #732188;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        #result {
+            color: #ff5722;
+        }
+
+        #score {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guess the Number</h1>
+    <input id="guessnumber" type="number" placeholder="1-10">
+    <button onclick="check()">Check</button>
+
+    <p id="result">You are right/wrong</p>
+    <p id="score">Score: 10</p>
+
+    <script>
+        var guessnumber = document.getElementById("guessnumber");
+        var result = document.getElementById("result");
+        var score = document.getElementById("score");
+        var randomnumber = Math.floor(Math.random() * 10) + 1;
+        var totalscore = 10;
+
+        function check() {
+            var enterednumber = parseInt(guessnumber.value);
+            if (enterednumber === randomnumber) {
+                result.textContent = "Right!";
+                result.style.color = "green";
+                alert("You won!");
+            } else {
+                totalscore--;
+                result.textContent = "Wrong!";
+                result.style.color = "red";
+                score.textContent = "Score: " + totalscore;
+
+                if (totalscore === 0) {
+                    alert("Game Over! The correct number was " + randomnumber);
+                    location.reload(); // restart game
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
