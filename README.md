@@ -42,4 +42,4 @@ cd guess-the-number
 guess-the-number/
 ├── index.html        # Main game file
 ├── README.md         # Project description
-└── screenshot.png    # Optional preview image
+   
