@@ -39,7 +39,4 @@ Switch between light and dark themes using the toggle button at the top. Enhance
 git clone https://github.com/yourusername/guess-the-number.git
 cd guess-the-number
 
-guess-the-number/
-├── index.html        # Main game file
-├── README.md         # Project description
-   
+
